@@ -7,6 +7,9 @@ import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Configuration
 @EnableWebMvc
 @ComponentScan(basePackages = {
@@ -16,6 +19,7 @@ public class AppConfig {
 
     @Bean
     public InternalResourceViewResolver resolver() {
+    	log.info("=======InternalResourceViewResolver=======");
         InternalResourceViewResolver resolver = new InternalResourceViewResolver();
         resolver.setViewClass(JstlView.class);
         resolver.setPrefix("/WEB-INF/views/");
