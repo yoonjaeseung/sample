@@ -12,18 +12,16 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = {
-    "com.example.sample.*"
-})
+@ComponentScan(basePackages = { "com.example.sample.*" })
 public class AppConfig {
 
-    @Bean
-    public InternalResourceViewResolver resolver() {
-    	log.info("=======InternalResourceViewResolver=======");
-        InternalResourceViewResolver resolver = new InternalResourceViewResolver();
-        resolver.setViewClass(JstlView.class);
-        resolver.setPrefix("/WEB-INF/views/");
-        resolver.setSuffix(".jsp");
-        return resolver;
-    }
+	@Bean
+	public InternalResourceViewResolver resolver() {
+		log.info("=======InternalResourceViewResolver=======");
+		InternalResourceViewResolver resolver = new InternalResourceViewResolver();
+		resolver.setViewClass(JstlView.class);
+		resolver.setPrefix("/WEB-INF/views/");
+		resolver.setSuffix(".jsp");
+		return resolver;
+	}
 }
